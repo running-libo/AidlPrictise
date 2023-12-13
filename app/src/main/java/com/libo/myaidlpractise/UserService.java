@@ -2,8 +2,8 @@ package com.libo.myaidlpractise;
 
 import android.app.Service;
 import android.content.Intent;
-import android.os.Binder;
 import android.os.IBinder;
+import android.os.RemoteException;
 import androidx.annotation.Nullable;
 import com.libo.myaidlpractise.bean.UserBean;
 
@@ -13,18 +13,25 @@ import com.libo.myaidlpractise.bean.UserBean;
  * description
  */
 public class UserService extends Service {
+    private UserServiceStub userServiceStub;
 
-    private Binder binder = new AIDLService.Stub(){
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        userServiceStub = new UserServiceStub();
+    }
+
+    class UserServiceStub extends AIDLService.Stub {
 
         @Override
-        public UserBean getUserBean(){
-            return new UserBean("小王",23);
+        public UserBean getUserBean() throws RemoteException {
+            return new UserBean("小王", 23);
         }
-    };
+    }
 
     @Nullable
     @Override
     public IBinder onBind(Intent intent) {
-        return binder;
+        return userServiceStub;
     }
 }
