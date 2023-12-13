@@ -1,5 +1,5 @@
 // UserBean.aidl
-package com.libo.myaidlpractise.bean;
+package com.example.aidlmodule.bean;
 
 // Declare any non-default types here with import statements
 

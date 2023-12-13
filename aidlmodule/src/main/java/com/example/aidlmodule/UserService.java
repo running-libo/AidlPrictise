@@ -1,11 +1,12 @@
-package com.libo.myaidlpractise;
+package com.example.aidlmodule;
 
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.os.RemoteException;
 import androidx.annotation.Nullable;
-import com.libo.myaidlpractise.bean.UserBean;
+import com.example.aidlmodule.bean.UserBean;
+import com.libo.myaidlpractise.AIDLService;
 
 /**
  * create by libo

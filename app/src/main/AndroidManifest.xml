@@ -18,14 +18,10 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".UserService"
+        <service android:name="com.example.aidlmodule.UserService"
             android:exported="true"
             android:enabled="true"
             android:process=":remote_process">
-
-            <intent-filter>
-                <action android:name="com.libo.myaidlpractise.UserService" />
-            </intent-filter>
         </service>
     </application>
 

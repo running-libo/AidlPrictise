@@ -1,4 +1,4 @@
-package com.libo.myaidlpractise.bean;
+package com.example.aidlmodule.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;
